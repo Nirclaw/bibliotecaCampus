@@ -214,3 +214,11 @@ SELECT fecha_reserva,estado FROM reserva;
 SELECT id_autor,titulo,id_estado FROM libro;
 
 SELECT id_libro,fecha_devolucion,estado FROM prestamo WHERE estado="Prestado";
+
+SELECT nombre,apellido,email FROM usuario;
+
+SELECT * FROM autor WHERE nombre = "Gabriel";
+
+SELECT * FROM libro INNER JOIN categoria ON libro.id_categoria=categoria.nombre;
+
+select libro.titulo,categoria.nombre  from libro,categoria where libro.id_categoria = categoria.id_categoria && nombre = "Novela";

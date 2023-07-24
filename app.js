@@ -13,15 +13,15 @@ import appEstadoLibro from "./routers/estadolibro.js";
 import appLibro from "./routers/libros.js";
 import appPrestamo from "./routers/prestamo.js";
 import appReserva from "./routers/prestamo.js";
+import appUsuario from "./routers/usuario.js";
 
 appExpres.use("/generateToken", appGenerar); //generador de token
 
 
 /* appExpres.use("/validarToken",appValiddarToken) */
 
-/* appExpres.use("/usuario");  */
-/* appExpres.use("/categoria"); 
-*/
+
+appExpres.use("/usuario",appUsuario); 
 appExpres.use("/reserva",appReserva);
 appExpres.use("/prestamo",appPrestamo);
 appExpres.use("/libro",appLibro);
