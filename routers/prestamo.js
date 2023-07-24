@@ -46,5 +46,15 @@ appReserva.get("/nombre",aappEncriptar ,proxybuscarnombreyapellido,(req, res) =>
     }
   );
 });
+appReserva.get("/confirmada", (req, res) => {
+  con.query(
+    /*sql*/ `SELECT reserva.estado,libro.titulo FROM reserva,libro WHERE reserva.id_libro = libro.id_libro && estado="Confirmada"`,
+    (err, data) => {
+      if (err) {
+        res.send(err);
+      } else res.send(data);
+    }
+  );
+});
 
 export default appReserva;

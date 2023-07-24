@@ -228,3 +228,8 @@ select usuario.nombre,apellido,prestamo.id_libro,fecha_prestamo,fecha_prestamo,f
 select libro.titulo,num_paginas,autor.nombre  from libro,autor where libro.id_autor = autor.id_autor && num_paginas >= 500;
 
 select usuario.nombre,apellido,prestamo.id_libro,libro.titulo from usuario,prestamo,libro WHERE usuario.id_usuario = prestamo.id_usuario &&  prestamo.id_libro = libro.id_libro && nombre = "Juan" && apellido = "Pérez";
+
+
+SELECT * FROM autor WHERE nacionalidad = "Español";
+
+SELECT reserva.estado,libro.titulo FROM reserva,libro WHERE reserva.id_libro = libro.id_libro && estado="Confirmada";

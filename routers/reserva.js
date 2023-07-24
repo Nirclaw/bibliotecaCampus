@@ -20,4 +20,6 @@ appPrestamo.get("/", (req, res) => {
   });
 });
 
+
+
 export default appPrestamo;

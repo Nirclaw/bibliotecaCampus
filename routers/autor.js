@@ -21,6 +21,13 @@ appAutores.get("/", (req, res) => {
     } else res.send(data);
   });
 });
+appAutores.get("/nacio/espa", (req, res) => {
+  con.query(/*sql*/ `SELECT * FROM autor WHERE nacionalidad = "Español";`, (err, data) => {
+    if (err) {
+      res.send(err);
+    } else res.send(data);
+  });
+});
 appAutores.get("/nombre",aappEncriptar,proxybuscarAutorNombre, (req, res) => {
   con.query(
     /*sql*/ `SELECT * FROM autor WHERE nombre = ?;`,
@@ -32,5 +39,8 @@ appAutores.get("/nombre",aappEncriptar,proxybuscarAutorNombre, (req, res) => {
     }
   );
 });
+
+
+
 
 export default appAutores;
