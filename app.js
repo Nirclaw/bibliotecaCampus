@@ -9,6 +9,10 @@ import appValiddarToken from "./routers/validartoken.js";
 import appAutores from "./routers/autor.js";
 import appCategoria from "./routers/categoria.js";
 import appEditorial from "./routers/editorial.js";
+import appEstadoLibro from "./routers/estadolibro.js";
+import appLibro from "./routers/libros.js";
+import appPrestamo from "./routers/prestamo.js";
+import appReserva from "./routers/prestamo.js";
 
 appExpres.use("/generateToken", appGenerar); //generador de token
 
@@ -17,10 +21,10 @@ appExpres.use("/generateToken", appGenerar); //generador de token
 
 /* appExpres.use("/usuario");  */
 /* appExpres.use("/categoria"); 
-appExpres.use("/libro");
-appExpres.use("/prestamo");
-appExpres.use("/reserva");*/
-
+*/
+appExpres.use("/reserva",appReserva);
+appExpres.use("/prestamo",appPrestamo);
+appExpres.use("/libro",appLibro);
 appExpres.use("/estado-libro",appEstadoLibro);
 appExpres.use("/editorial",appEditorial);
 appExpres.use("/categoria",appCategoria);

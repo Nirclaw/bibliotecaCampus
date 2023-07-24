@@ -205,3 +205,12 @@ INSERT INTO reserva (id_reserva, id_usuario, id_libro, fecha_reserva, fecha_rese
 SELECT * FROM autor;
 
 SELECT * from categoria;
+
+SELECT id_autor,titulo,id_editorial FROM libro;
+
+SELECT fecha_prestamo,fecha_devolucion,estado FROM prestamo;
+SELECT fecha_reserva,estado FROM reserva;
+
+SELECT id_autor,titulo,id_estado FROM libro;
+
+SELECT id_libro,fecha_devolucion,estado FROM prestamo WHERE estado="Prestado";
