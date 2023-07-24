@@ -21,14 +21,14 @@ appExpres.use("/generateToken", appGenerar); //generador de token
 /* appExpres.use("/validarToken",appValiddarToken) */
 
 
-appExpres.use("/usuario",appUsuario); 
-appExpres.use("/reserva",appReserva);
-appExpres.use("/prestamo",appPrestamo);
-appExpres.use("/libro",appLibro);
-appExpres.use("/estado-libro",appEstadoLibro);
-appExpres.use("/editorial",appEditorial);
-appExpres.use("/categoria",appCategoria);
-appExpres.use("/autor",appAutores);
+appExpres.use("/usuario",appValiddarToken,appUsuario); 
+appExpres.use("/reserva",appValiddarToken,appReserva);
+appExpres.use("/prestamo",appValiddarToken,appPrestamo);
+appExpres.use("/libro",appValiddarToken,appLibro);
+appExpres.use("/estado-libro",appValiddarToken,appEstadoLibro);
+appExpres.use("/editorial",appValiddarToken,appEditorial);
+appExpres.use("/categoria",appValiddarToken,appCategoria);
+appExpres.use("/autor",appValiddarToken,appAutores);
 
 
 
