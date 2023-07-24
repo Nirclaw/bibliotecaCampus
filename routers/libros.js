@@ -29,6 +29,15 @@ appLibro.get("/estado", (req, res) => {
 });
 
 
+appLibro.get("/mayor_500pag", (req, res) => {
+  con.query(/*sql*/ `select libro.titulo,num_paginas,autor.nombre  from libro,autor where libro.id_autor = autor.id_autor && num_paginas >= 500;`, (err, data) => {
+    if (err) {
+      res.send(err);
+    } else res.send(data);
+  });
+});
+
+
 
 
 

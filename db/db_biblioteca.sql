@@ -224,3 +224,5 @@ SELECT * FROM libro INNER JOIN categoria ON libro.id_categoria=categoria.nombre;
 select libro.titulo,categoria.nombre  from libro,categoria where libro.id_categoria = categoria.id_categoria && nombre = "Novela";
 
 select usuario.nombre,apellido,prestamo.id_libro,fecha_prestamo,fecha_prestamo,fecha_devolucion,estado from usuario,prestamo WHERE usuario.id_usuario = prestamo.id_usuario && nombre = "Juan" && apellido = "Pérez";
+
+select libro.titulo,num_paginas,autor.nombre  from libro,autor where libro.id_autor = autor.id_autor && num_paginas >= 500;

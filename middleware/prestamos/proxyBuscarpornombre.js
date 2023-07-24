@@ -15,7 +15,6 @@ proxybuscarnombreyapellido.use(async (req, res, next) => {
   };
   
   let { iat, exp, ...coppia } = jwtData.payload;
-  console.log(coppia);
   if (
     JSON.stringify(Object.keys(comprar)) === JSON.stringify(Object.keys(coppia))
   ) {
