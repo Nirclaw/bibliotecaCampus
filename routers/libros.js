@@ -3,6 +3,7 @@ import mysql from "mysql2";
 import { CONNECT } from "../config/config.js";
 import aappEncriptar from "./validarEstructura.js";
 import proxybuscarnombreyapellidolibro from "../middleware/libro/proxyBuscarpornombre.js";
+import proxybuscareditorial from "../middleware/libro/prxyEditorail.js";
 
 const appLibro = Router();
 let con = undefined;
@@ -47,6 +48,18 @@ appLibro.get("/prestado/usuario",aappEncriptar, proxybuscarnombreyapellidolibro,
     } else res.send(data);
   });
 });
+
+appLibro.get("/editorial",aappEncriptar, proxybuscareditorial, (req, res) => {
+  con.query(/*sql*/ `SELECT libro.id_editorial,editorial.nombre FROM libro,editorial WHERE libro.id_editorial=editorial.id_editorial && nombre = ? ;`,
+  req.body.nombre, (err, data) => {
+    if (err) {
+      res.send(err);
+    } else res.send(data);
+  });
+});
+
+
+
 
 
 

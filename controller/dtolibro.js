@@ -34,3 +34,18 @@ __decorate([
     }, { toClassOnly: true }),
     __metadata("design:type", String)
 ], buscarnombreyapellidolibro.prototype, "apellido", void 0);
+export class buscareditorial {
+    constructor(ID) {
+        this.nombre = ID;
+    }
+}
+__decorate([
+    Expose({ name: "nombre" }),
+    Transform(({ value }) => {
+        if (/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value))
+            return value;
+        else
+            throw { status: 400, message: "Error en el nombre" };
+    }, { toClassOnly: true }),
+    __metadata("design:type", String)
+], buscareditorial.prototype, "nombre", void 0);

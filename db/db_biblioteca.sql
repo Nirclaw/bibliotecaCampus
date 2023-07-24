@@ -233,3 +233,5 @@ select usuario.nombre,apellido,prestamo.id_libro,libro.titulo from usuario,prest
 SELECT * FROM autor WHERE nacionalidad = "Español";
 
 SELECT reserva.estado,libro.titulo FROM reserva,libro WHERE reserva.id_libro = libro.id_libro && estado="Confirmada";
+
+SELECT libro.id_editorial,editorial.nombre FROM libro,editorial WHERE libro.id_editorial=editorial.id_editorial && nombre = "Editorial Alfaguara" ;
